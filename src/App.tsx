@@ -41,7 +41,6 @@ function App() {
       const todoData = (
         await API.graphql(graphqlOperation(listTodos))
       ) as GraphQLResult<ListTodosQuery>;
-      ((QUERY, todos) => {})
       dispatch({ type: QUERY, todos: todoData?.data?.listTodos?.items });
     }
     getData();
